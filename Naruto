@@ -1,0 +1,1930 @@
+-- ts file was generated at discord.gg/25ms
+
+local _Players = game:GetService('Players')
+local _SoundService = game:GetService('SoundService')
+local _LocalPlayer = _Players.LocalPlayer
+local v4 = 'https://github.com/LolnotaKid/MensAreBrave-/raw/refs/heads/main/lv_0_20250215224706.mp3'
+local u5 = 'lv_0_20250215224706.mp3'
+
+if not isfile(u5) then
+    writefile(u5, game:HttpGet(v4))
+end
+
+local u6 = false
+
+local function v14(p7)
+    local _Humanoid = p7:WaitForChild('Humanoid')
+    local u9 = nil
+    local u10 = false
+
+    _Humanoid.Died:Connect(function()
+        if not u10 then
+            u10 = true
+            u9 = p7:GetPrimaryPartCFrame()
+
+            if not u6 then
+                u6 = true
+
+                local _Sound = Instance.new('Sound')
+
+                _Sound.SoundId = getcustomasset(u5)
+                _Sound.Volume = 4
+                _Sound.Looped = false
+                _Sound.Parent = _SoundService
+
+                local v12 = _Sound
+
+                _Sound.Play(v12)
+                _Sound.Ended:Connect(function()
+                    _Sound:Destroy()
+
+                    u6 = false
+                end)
+            end
+
+            local v13 = _LocalPlayer.CharacterAdded:Wait()
+
+            v13:WaitForChild('HumanoidRootPart')
+            task.wait(0.5)
+
+            v13.HumanoidRootPart.CFrame = u9
+        end
+    end)
+end
+
+if _LocalPlayer.Character then
+    v14(_LocalPlayer.Character)
+end
+
+_LocalPlayer.CharacterAdded:Connect(v14)
+
+game.Players.LocalPlayer.PlayerGui:FindFirstChild('Hotbar'):FindFirstChild('Backpack'):FindFirstChild('Hotbar'):FindFirstChild('1').Base.ToolName.Text = 'Rasengan'
+game.Players.LocalPlayer.PlayerGui:FindFirstChild('Hotbar'):FindFirstChild('Backpack'):FindFirstChild('Hotbar'):FindFirstChild('2').Base.ToolName.Text = 'Uzumaki Combo'
+game.Players.LocalPlayer.PlayerGui:FindFirstChild('Hotbar'):FindFirstChild('Backpack'):FindFirstChild('Hotbar'):FindFirstChild('3').Base.ToolName.Text = 'Teleportation Jutsu'
+game.Players.LocalPlayer.PlayerGui:FindFirstChild('Hotbar'):FindFirstChild('Backpack'):FindFirstChild('Hotbar'):FindFirstChild('4').Base.ToolName.Text = 'Shadow Clone Throw'
+
+local _PlayerGui = game:GetService('Players').LocalPlayer:WaitForChild('PlayerGui')
+
+local function v20()
+    local _ScreenGui = _PlayerGui:FindFirstChild('ScreenGui')
+
+    if _ScreenGui then
+        local _MagicHealth = _ScreenGui:FindFirstChild('MagicHealth')
+        local v18 = _MagicHealth and _MagicHealth:FindFirstChild('TextLabel')
+
+        if v18 then
+            v18.Text = 'UNLEASH THE BEAST'
+
+            local _Bar = _MagicHealth:FindFirstChild('Health').Bar.Bar
+
+            if _Bar then
+                _Bar.ImageColor3 = Color3.fromRGB(255, 150, 0)
+            end
+
+            return
+        end
+    end
+end
+
+_PlayerGui.DescendantAdded:Connect(v20)
+v20()
+
+local _LocalPlayer2 = game.Players.LocalPlayer
+local u22 = nil
+
+_LocalPlayer2.Chatted:Connect(function(p23)
+    if p23 == '/infor' and not u22 then
+        u22 = Instance.new('ScreenGui')
+        u22.Parent = _LocalPlayer2.PlayerGui
+        u22.Name = 'infor'
+
+        local _Frame = Instance.new('Frame')
+
+        _Frame.Parent = u22
+        _Frame.Name = 'boom'
+        _Frame.BackgroundColor3 = Color3.fromRGB(242, 243, 243)
+        _Frame.BackgroundTransparency = 0.3
+        _Frame.BorderSizePixel = 2
+        _Frame.BorderColor3 = Color3.fromRGB(17, 17, 17)
+        _Frame.Position = UDim2.new(0.2, 0, 0.1)
+        _Frame.Size = UDim2.new(0.5, 0, 0.8)
+        _Frame.Visible = true
+        _Frame.Active = true
+        _Frame.Draggable = true
+
+        local _TextLabel = Instance.new('TextLabel')
+
+        _TextLabel.Parent = _Frame
+        _TextLabel.Name = 'Title'
+        _TextLabel.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+        _TextLabel.BackgroundTransparency = 1
+        _TextLabel.Position = UDim2.new(0.2, 0, 0.02)
+        _TextLabel.Size = UDim2.new(0.6, 0, 0.08)
+        _TextLabel.Font = Enum.Font.SourceSansBold
+        _TextLabel.TextColor3 = Color3.fromRGB(17, 17, 17)
+        _TextLabel.Text = 'Information'
+        _TextLabel.TextSize = 18
+        _TextLabel.TextWrapped = true
+
+        local _TextLabel2 = Instance.new('TextLabel')
+
+        _TextLabel2.Parent = _Frame
+        _TextLabel2.Name = 'Move1'
+        _TextLabel2.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+        _TextLabel2.BackgroundTransparency = 1
+        _TextLabel2.Position = UDim2.new(0.05, 0, 0.12)
+        _TextLabel2.Size = UDim2.new(0.9, 0, 0.15)
+        _TextLabel2.Font = Enum.Font.Cartoon
+        _TextLabel2.TextColor3 = Color3.fromRGB(17, 17, 17)
+        _TextLabel2.Text = "For Move 1, there's also a custom distance changer. Type '/1 = 5' (where 5 is the distance). Limit: 7-200. [Default - 55]"
+        _TextLabel2.TextSize = 14
+        _TextLabel2.TextWrapped = true
+
+        local _TextLabel3 = Instance.new('TextLabel')
+
+        _TextLabel3.Parent = _Frame
+        _TextLabel3.Name = 'Move2'
+        _TextLabel3.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+        _TextLabel3.BackgroundTransparency = 1
+        _TextLabel3.Position = UDim2.new(0.05, 0, 0.28)
+        _TextLabel3.Size = UDim2.new(0.9, 0, 0.15)
+        _TextLabel3.Font = Enum.Font.Cartoon
+        _TextLabel3.TextColor3 = Color3.fromRGB(17, 17, 17)
+        _TextLabel3.Text = "For Move 2, there's also a custom distance changer. Type '/2 = 5' (where 5 is the distance). Limit: 1-200. [Default 50]"
+        _TextLabel3.TextSize = 14
+        _TextLabel3.TextWrapped = true
+
+        local _TextLabel4 = Instance.new('TextLabel')
+
+        _TextLabel4.Parent = _Frame
+        _TextLabel4.Name = 'Move3'
+        _TextLabel4.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+        _TextLabel4.BackgroundTransparency = 1
+        _TextLabel4.Position = UDim2.new(0.05, 0, 0.44)
+        _TextLabel4.Size = UDim2.new(0.9, 0, 0.15)
+        _TextLabel4.Font = Enum.Font.Cartoon
+        _TextLabel4.TextColor3 = Color3.fromRGB(17, 17, 17)
+        _TextLabel4.Text = "For Move 3, there's a custom distance changer. In chat, type '/3 = 5' (where 5 is the distance). Limit: 5-200. [Default is 60]"
+        _TextLabel4.TextSize = 14
+        _TextLabel4.TextWrapped = true
+
+        local _TextLabel5 = Instance.new('TextLabel')
+
+        _TextLabel5.Parent = _Frame
+        _TextLabel5.Name = 'OutfitReset'
+        _TextLabel5.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+        _TextLabel5.BackgroundTransparency = 1
+        _TextLabel5.Position = UDim2.new(0.05, 0, 0.6)
+        _TextLabel5.Size = UDim2.new(0.9, 0, 0.2)
+        _TextLabel5.Font = Enum.Font.Cartoon
+        _TextLabel5.TextColor3 = Color3.fromRGB(17, 17, 17)
+        _TextLabel5.Text = "In the chat, if you type '/false', Naruto's outfit will be removed, and your own outfit will be restored.(specially Made for u GoldenHead ;) If not work type /true"
+        _TextLabel5.TextSize = 14
+        _TextLabel5.TextWrapped = true
+
+        local _TextButton = Instance.new('TextButton')
+
+        _TextButton.Parent = _Frame
+        _TextButton.Name = 'CloseButton'
+        _TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+        _TextButton.Position = UDim2.new(0.02, 0, 0.9)
+        _TextButton.Size = UDim2.new(0.1, 0, 0.08)
+        _TextButton.Font = Enum.Font.SourceSansBold
+        _TextButton.Text = 'X'
+        _TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+        _TextButton.TextSize = 18
+
+        _TextButton.MouseButton1Click:Connect(function()
+            u22:Destroy()
+        end)
+    end
+end)
+
+local _LocalPlayer3 = game.Players.LocalPlayer
+
+_LocalPlayer3.PlayerGui.Hotbar.Backpack.Hotbar:WaitForChild('1').Base.Reuse.Visible = true
+_LocalPlayer3.PlayerGui.Hotbar.Backpack.Hotbar:WaitForChild('1').Base.Reuse.Text = 'VARIANT AIR'
+_LocalPlayer3.PlayerGui.Hotbar.Backpack.Hotbar:WaitForChild('1').Base.Reuse.Reuse.Text = 'VARIANT AIR'
+_LocalPlayer3.PlayerGui.Hotbar.Backpack.Hotbar:WaitForChild('2').Base.Reuse.Visible = true
+_LocalPlayer3.PlayerGui.Hotbar.Backpack.Hotbar:WaitForChild('2').Base.Reuse.Text = 'VARIANT AIR'
+_LocalPlayer3.PlayerGui.Hotbar.Backpack.Hotbar:WaitForChild('2').Base.Reuse.Reuse.Text = 'VARIANT AIR'
+
+local u32 = 'rbxassetid://18614707979'
+local u33 = 'rbxassetid://18251834744'
+local u34 = 'rbxassetid://0'
+local u35 = nil
+local u36 = nil
+local u37 = nil
+local u38 = false
+local _LocalPlayer4 = game.Players.LocalPlayer
+local u40 = _LocalPlayer4.Character or _LocalPlayer4.CharacterAdded:Wait()
+
+local function u41()
+    if u40 then
+        if u40:FindFirstChild('Pants') then
+            u35 = u40.Pants.PantsTemplate
+        end
+        if u40:FindFirstChild('Shirt') then
+            u36 = u40.Shirt.ShirtTemplate
+        end
+        if u40:FindFirstChild('Shirt Graphic') then
+            u37 = u40['Shirt Graphic'].Graphic
+        end
+
+        u38 = true
+    end
+end
+local function u48(p42, p43, p44)
+    if u40 then
+        pcall(function()
+            if u40:FindFirstChild('Pants') then
+                u40.Pants:Destroy()
+            end
+        end)
+        pcall(function()
+            if u40:FindFirstChild('Shirt') then
+                u40.Shirt:Destroy()
+            end
+        end)
+        pcall(function()
+            if u40:FindFirstChild('Shirt Graphic') then
+                u40['Shirt Graphic']:Destroy()
+            end
+        end)
+
+        if p42 then
+            local _Pants = Instance.new('Pants')
+
+            _Pants.Parent = u40
+            _Pants.PantsTemplate = p42
+            _Pants.Name = 'Pants'
+        end
+        if p43 then
+            local _Shirt = Instance.new('Shirt')
+
+            _Shirt.Parent = u40
+            _Shirt.ShirtTemplate = p43
+            _Shirt.Name = 'Shirt'
+        end
+        if p44 then
+            local _ShirtGraphic = Instance.new('ShirtGraphic')
+
+            _ShirtGraphic.Parent = u40
+            _ShirtGraphic.Graphic = p44
+            _ShirtGraphic.Name = 'Shirt Graphic'
+        end
+    end
+end
+local function u49()
+    u48(u32, u33, u34)
+end
+local function u50()
+    if u38 then
+        u48(u35, u36, u37)
+    end
+end
+
+u41()
+_LocalPlayer4.Chatted:Connect(function(p51)
+    local v52 = p51:lower()
+
+    if v52 == '/true' then
+        u41()
+        u49()
+    elseif v52 == '/false' then
+        u50()
+    end
+end)
+u49()
+
+local _Players2 = game:GetService('Players')
+
+game:GetService('RunService')
+
+local _CurrentCamera = workspace.CurrentCamera
+local _LocalPlayer5 = _Players2.LocalPlayer
+local u56 = _LocalPlayer5.Character or _LocalPlayer5.CharacterAdded:Wait()
+local _Humanoid2 = u56:WaitForChild('Humanoid')
+local v58 = _Humanoid2:FindFirstChildOfClass('Animator') or _Humanoid2:WaitForChild('Animator')
+local u59 = 'rbxassetid://140164642047188'
+local _CameraSubject = _CurrentCamera.CameraSubject
+local u61 = 55
+
+local function v65(p62)
+    local __1ssd = p62:match('^/1%s*=%s*(%d+)$')
+    local v64 = __1ssd and tonumber(__1ssd)
+
+    if v64 then
+        u61 = math.clamp(v64, 1, 200)
+
+        game.StarterGui:SetCore('ChatMakeSystemMessage', {
+            Text = 'Teleport distance set to ' .. u61 .. ' studs.',
+            Color = Color3.fromRGB(0, 255, 0),
+        })
+    end
+end
+
+_LocalPlayer5.Chatted:Connect(v65)
+
+local function u76()
+    local _huge = math.huge
+    local v67, v68, v69 = pairs(workspace:GetDescendants())
+    local v70 = nil
+
+    while true do
+        local v71
+
+        v69, v71 = v67(v68, v69)
+
+        if v69 == nil then
+            break
+        end
+        if v71:IsA('Model') and v71 ~= u56 then
+            local _Humanoid3 = v71:FindFirstChildOfClass('Humanoid')
+            local _Head = v71:FindFirstChild('Head')
+
+            if _Humanoid3 and _Head then
+                local _, v74 = _CurrentCamera:WorldToScreenPoint(_Head.Position)
+
+                if v74 then
+                    local _Magnitude = (_CurrentCamera.CFrame.Position - _Head.Position).Magnitude
+
+                    if _Magnitude < _huge then
+                        v70 = v71
+                        _huge = _Magnitude
+                    end
+                end
+            end
+        end
+    end
+
+    return v70, _huge
+end
+local function u80(p77, p78)
+    local v79 = p77 and p77:FindFirstChild('Head')
+
+    if v79 then
+        _CurrentCamera.CameraSubject = v79
+
+        task.wait(p78)
+
+        _CurrentCamera.CameraSubject = _CameraSubject
+    end
+end
+local function u86(p81)
+    if p81 then
+        local _HumanoidRootPart = p81:FindFirstChild('HumanoidRootPart')
+        local _HumanoidRootPart2 = u56:FindFirstChild('HumanoidRootPart')
+
+        if _HumanoidRootPart and _HumanoidRootPart2 then
+            local v84 = _HumanoidRootPart.CFrame.LookVector * -3
+            local v85 = _HumanoidRootPart.Position + v84
+
+            _HumanoidRootPart2.CFrame = CFrame.new(v85, _HumanoidRootPart.Position)
+
+            u80(p81, 1)
+        end
+    end
+end
+
+v58.AnimationPlayed:Connect(function(p87)
+    if p87.Animation and p87.Animation.AnimationId == u59 and _Humanoid2:GetState() == Enum.HumanoidStateType.Freefall then
+        local v88, v89 = u76()
+
+        if v88 and v89 <= u61 then
+            u86(v88)
+        end
+    end
+end)
+
+local u90 = 10468665991
+local _LocalPlayer6 = game.Players.LocalPlayer;
+
+(_LocalPlayer6.Character or _LocalPlayer6.CharacterAdded:Wait()):WaitForChild('Humanoid').AnimationPlayed:Connect(function(p92)
+    if p92.Animation.AnimationId == 'rbxassetid://' .. u90 then
+        local _Humanoid4 = game.Players.LocalPlayer.Character:WaitForChild('Humanoid')
+        local v94, v95, v96 = pairs(_Humanoid4:GetPlayingAnimationTracks())
+
+        while true do
+            local v97
+
+            v96, v97 = v94(v95, v96)
+
+            if v96 == nil then
+                break
+            end
+
+            v97:Stop()
+        end
+
+        local _Animation = Instance.new('Animation')
+
+        _Animation.AnimationId = 'rbxassetid://140164642047188'
+
+        local v99 = _Humanoid4:LoadAnimation(_Animation)
+
+        v99:Play()
+        v99:AdjustSpeed(0.1)
+
+        v99.TimePosition = 6.86
+
+        v99:AdjustSpeed(1)
+
+        local v104 = {
+            function()
+                local _Sound2 = Instance.new('Sound', game.Players.LocalPlayer.Character.HumanoidRootPart)
+
+                _Sound2.SoundId = 'rbxassetid://' .. 7230608425
+                _Sound2.Volume = 1
+                _Sound2.PlaybackSpeed = 1.65
+
+                _Sound2:Play()
+            end,
+            function()
+                local v101 = 'https://github.com/LolnotaKid/Rasengannnmn-boom/raw/refs/heads/main/Naruto_Shippuden_-_Rasengan(144p)%20(online-video-cutter.com).mp3'
+                local v102 = 'Naruto_Shippuden_-_Rasengan(144p)%20(online-video-cutter.com).mp3'
+
+                if not isfile(v102) then
+                    writefile(v102, game:HttpGet(v101))
+                end
+
+                local _Sound3 = Instance.new('Sound')
+
+                _Sound3.SoundId = getcustomasset(v102)
+                _Sound3.Volume = 1
+                _Sound3.Looped = false
+                _Sound3.Parent = game.Players.LocalPlayer:WaitForChild('PlayerGui')
+
+                _Sound3:Play()
+            end,
+        }
+
+        v104[math.random(1, #v104)]()
+        wait(0)
+
+        local v105 = game:GetObjects('rbxassetid://' .. 17019726692)[1]
+        local _RightArm = (game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()):FindFirstChild('Right Arm')
+
+        if v105 then
+            local _Character = game.Players.LocalPlayer.Character
+            local v108 = _Character and _Character:WaitForChild('Right Arm')
+
+            if v108 then
+                v105.Parent = game.Workspace
+
+                local v109 = v108.CFrame * CFrame.new(0, 0, 0)
+                local v110, v111, v112 = pairs(v105:GetDescendants())
+
+                while true do
+                    local v113
+
+                    v112, v113 = v110(v111, v112)
+
+                    if v112 == nil then
+                        break
+                    end
+                    if v113:IsA('BasePart') then
+                        v113.CanCollide = false
+                        v113.Anchored = false
+
+                        local _Weld = Instance.new('Weld')
+
+                        _Weld.Part0 = v113
+                        _Weld.Part1 = _RightArm
+                        _Weld.C0 = CFrame.new(0, 1.5, 0) * CFrame.Angles(math.rad(0), 0, 0)
+                        _Weld.Parent = v113
+                        v113.CFrame = v109
+                    end
+                end
+
+                wait(0.6)
+                v105:Destroy()
+            end
+        end
+
+        wait(0)
+
+        s = Instance.new('Sound', game.Players.LocalPlayer.Character.HumanoidRootPart)
+        s.SoundId = 'rbxassetid://' .. 224339308
+
+        s:Play()
+
+        s.Volume = 1
+        s.PlaybackSpeed = 1
+
+        local v115 = game.ReplicatedStorage.Resources.Chain.Throw.Throw.Attachment:Clone()
+
+        v115.Parent = game.Players.LocalPlayer.Character:WaitForChild('Right Arm')
+
+        local v116, v117, v118 = ipairs(v115:GetChildren())
+
+        while true do
+            local v119
+
+            v118, v119 = v116(v117, v118)
+
+            if v118 == nil then
+                break
+            end
+            if v119:IsA('ParticleEmitter') then
+                v119:Emit(15)
+
+                v119.Enabled = true
+            end
+        end
+
+        wait(0.5)
+        v115:Destroy()
+    end
+end)
+
+local u120 = 10466974800
+local _LocalPlayer7 = game.Players.LocalPlayer;
+
+(_LocalPlayer7.Character or _LocalPlayer7.CharacterAdded:Wait()):WaitForChild('Humanoid').AnimationPlayed:Connect(function(p122)
+    if p122.Animation.AnimationId == 'rbxassetid://' .. u120 then
+        local _Humanoid5 = game.Players.LocalPlayer.Character:WaitForChild('Humanoid')
+        local v124, v125, v126 = pairs(_Humanoid5:GetPlayingAnimationTracks())
+
+        while true do
+            local v127
+
+            v126, v127 = v124(v125, v126)
+
+            if v126 == nil then
+                break
+            end
+
+            v127:Stop()
+        end
+
+        local _Animation2 = Instance.new('Animation')
+
+        _Animation2.AnimationId = 'rbxassetid://18896229321'
+
+        local u129 = _Humanoid5:LoadAnimation(_Animation2)
+        local v130 = u129
+
+        u129.Play(v130)
+
+        local v131 = u129
+
+        u129.AdjustSpeed(v131, 1)
+
+        u129.TimePosition = 0
+
+        local v132 = u129
+
+        u129.AdjustSpeed(v132, 1.45)
+        delay(1.65, function()
+            u129:Stop()
+        end)
+        game.Players.LocalPlayer.Character:WaitForChild('BarrageBind'):Destroy()
+
+        local v133 = 'https://github.com/LolnotaKid/MynigaKakasahi/raw/refs/heads/main/Kakashi%20v.s%20Sasuke%20Taijutsu%20_%20Naruto%20Shippuden%20English%20Sub%20(online-video-cutter.com)%20(1).mp3'
+        local v134 = 'Kakashi%20v.s%20Sasuke%20Taijutsu%20_%20Naruto%20Shippuden%20English%20Sub%20(online-video-cutter.com)%20(1).mp3'
+
+        if not isfile(v134) then
+            writefile(v134, game:HttpGet(v133))
+        end
+
+        local _Sound4 = Instance.new('Sound')
+
+        _Sound4.SoundId = getcustomasset(v134)
+        _Sound4.Volume = 4
+        _Sound4.Looped = false
+        _Sound4.Parent = game.Players.LocalPlayer:WaitForChild('PlayerGui')
+
+        _Sound4:Play()
+
+        game.Players.LocalPlayer.PlayerGui:FindFirstChild('Hotbar'):FindFirstChild('Backpack'):FindFirstChild('Hotbar'):FindFirstChild('1').Base.ToolName.Text = 'Wind Style: Rasengan'
+
+        wait(5)
+
+        game.Players.LocalPlayer.PlayerGui:FindFirstChild('Hotbar'):FindFirstChild('Backpack'):FindFirstChild('Hotbar'):FindFirstChild('1').Base.ToolName.Text = 'Rasengan'
+    end
+end)
+
+local u136 = 10471336737
+local _LocalPlayer8 = game.Players.LocalPlayer;
+
+(_LocalPlayer8.Character or _LocalPlayer8.CharacterAdded:Wait()):WaitForChild('Humanoid').AnimationPlayed:Connect(function(p138)
+    if p138.Animation.AnimationId == 'rbxassetid://' .. u136 then
+        local _Humanoid6 = game.Players.LocalPlayer.Character:WaitForChild('Humanoid')
+        local v140, v141, v142 = pairs(_Humanoid6:GetPlayingAnimationTracks())
+
+        while true do
+            local v143
+
+            v142, v143 = v140(v141, v142)
+
+            if v142 == nil then
+                break
+            end
+
+            v143:Stop()
+        end
+
+        local _Animation3 = Instance.new('Animation')
+
+        _Animation3.AnimationId = 'rbxassetid://17838619895'
+
+        local v145 = _Humanoid6:LoadAnimation(_Animation3)
+
+        v145:Play()
+        v145:AdjustSpeed(0)
+
+        v145.TimePosition = 0.496
+
+        v145:AdjustSpeed(1)
+        wait(0)
+
+        local _LocalPlayer9 = game.Players.LocalPlayer
+        local u147 = _LocalPlayer9.Character or _LocalPlayer9.CharacterAdded:Wait()
+
+        if not u147:FindFirstChild('HumanoidRootPart') then
+            return
+        end
+
+        local function u152(p148, p149)
+            local _Part = Instance.new('Part')
+
+            _Part.Size = Vector3.new(1, 1, 5)
+            _Part.Anchored = true
+            _Part.CanCollide = false
+            _Part.Transparency = 1
+            _Part.Position = p148
+            _Part.Parent = p149
+
+            local _Attachment = Instance.new('Attachment', _Part)
+
+            _Attachment.Position = Vector3.new(0, 0, _Part.Size.Z / 2)
+
+            return _Part, _Attachment
+        end
+        local function u158(p153, p154, p155, p156)
+            local _Beam = Instance.new('Beam')
+
+            _Beam.Attachment0 = p153
+            _Beam.Attachment1 = p154
+            _Beam.Color = ColorSequence.new(p155)
+            _Beam.Width0 = 2
+            _Beam.Width1 = 2
+            _Beam.Brightness = 10
+            _Beam.LightEmission = 5
+            _Beam.LightInfluence = 0
+            _Beam.FaceCamera = true
+            _Beam.Texture = 'rbxassetid://8930617259'
+            _Beam.TextureSpeed = 2
+            _Beam.Parent = p156
+
+            return _Beam
+        end
+
+        (function()
+            local v159 = u147:FindFirstChild('LeftHand') or u147:FindFirstChild('Left Arm')
+            local v160 = u147:FindFirstChild('RightHand') or u147:FindFirstChild('Right Arm')
+
+            if v159 and v160 then
+                local _Attachment2 = Instance.new('Attachment', v159)
+                local _Attachment3 = Instance.new('Attachment', v160)
+                local u163, v164 = u152(v159.Position + Vector3.new(-5, 0, 0), u147)
+                local u165, v166 = u152(v160.Position + Vector3.new(5, 0, 0), u147)
+                local u167 = u158(_Attachment2, v164, Color3.fromRGB(255, 87, 34), u147)
+                local u168 = u158(_Attachment3, v166, Color3.fromRGB(255, 87, 34), u147)
+
+                task.delay(2.9, function()
+                    u167:Destroy()
+                    u168:Destroy()
+                    _Attachment2:Destroy()
+                    _Attachment3:Destroy()
+                    u163:Destroy()
+                    u165:Destroy()
+                end)
+            end
+        end)()
+
+        local v169 = 'https://github.com/LolnotaKid/Sasuke-Gets-humble-by-Naruto-/raw/refs/heads/main/Sasuke%20Gets%20Cooked%20.mp3'
+        local v170 = 'Sasuke%20Gets%20Cooked%20.mp3'
+
+        if not isfile(v170) then
+            writefile(v170, game:HttpGet(v169))
+        end
+
+        local _Sound5 = Instance.new('Sound')
+
+        _Sound5.SoundId = getcustomasset(v170)
+        _Sound5.Volume = 3
+        _Sound5.Looped = false
+        _Sound5.Parent = game.Players.LocalPlayer:WaitForChild('PlayerGui')
+
+        _Sound5:Play()
+
+        local _Players3 = game:GetService('Players')
+        local _Lighting = game:GetService('Lighting');
+
+        (function()
+            local _LocalPlayer10 = _Players3.LocalPlayer
+
+            if _LocalPlayer10 and _LocalPlayer10.Character then
+                local _Character2 = _LocalPlayer10.Character
+                local _Highlight = Instance.new('Highlight')
+
+                _Highlight.Parent = _Character2
+                _Highlight.OutlineTransparency = 1
+                _Highlight.FillTransparency = 0
+                _Highlight.FillColor = Color3.fromRGB(0, 0, 0)
+
+                local _ColorCorrectionEffect = Instance.new('ColorCorrectionEffect')
+
+                _ColorCorrectionEffect.Parent = _Lighting
+                _ColorCorrectionEffect.Brightness = 1
+
+                task.wait(0.1)
+
+                _Highlight.FillColor = Color3.fromRGB(255, 255, 255)
+                _ColorCorrectionEffect.Brightness = -1
+
+                task.wait(0.2)
+                _ColorCorrectionEffect:Destroy()
+                _Highlight:Destroy()
+            end
+        end)()
+
+        local v178 = game.ReplicatedStorage.Resources.StoicBomb.OHNO.Normal.Attachment:Clone()
+
+        v178.Parent = game.Players.LocalPlayer.Character['Right Leg']
+
+        local v179, v180, v181 = ipairs(v178:GetChildren())
+
+        while true do
+            local v182
+
+            v181, v182 = v179(v180, v181)
+
+            if v181 == nil then
+                break
+            end
+            if v182:IsA('ParticleEmitter') then
+                v182:Emit(12)
+
+                v182.Enabled = true
+            end
+        end
+
+        wait(0.9)
+        v178:Destroy()
+        Wait(0.6)
+
+        local v183 = 'https://github.com/LolnotaKid/Kiba-Brain-Crack-by-Naruto-/raw/refs/heads/main/Kiba%20Gets%20Cooked.mp3'
+        local v184 = 'Kiba%20Gets%20Cooked.mp3'
+
+        if not isfile(v184) then
+            writefile(v184, game:HttpGet(v183))
+        end
+
+        local _Sound6 = Instance.new('Sound')
+
+        _Sound6.SoundId = getcustomasset(v184)
+        _Sound6.Volume = 4
+        _Sound6.Looped = false
+        _Sound6.Parent = game.Players.LocalPlayer:WaitForChild('PlayerGui')
+
+        _Sound6:Play()
+
+        local _LocalPlayer11 = game.Players.LocalPlayer
+        local v187 = _LocalPlayer11.Character or _LocalPlayer11.CharacterAdded:Wait()
+        local _Animation4 = Instance.new('Animation')
+
+        _Animation4.AnimationId = 'rbxassetid://98542310119798'
+
+        v187:WaitForChild('Humanoid'):LoadAnimation(_Animation4):Play()
+    end
+end)
+
+local u189 = 12510170988
+local _LocalPlayer12 = game.Players.LocalPlayer;
+
+(_LocalPlayer12.Character or _LocalPlayer12.CharacterAdded:Wait()):WaitForChild('Humanoid').AnimationPlayed:Connect(function(p191)
+    if p191.Animation.AnimationId == 'rbxassetid://' .. u189 then
+        local _Humanoid7 = game.Players.LocalPlayer.Character:WaitForChild('Humanoid')
+        local v193, v194, v195 = pairs(_Humanoid7:GetPlayingAnimationTracks())
+
+        while true do
+            local v196
+
+            v195, v196 = v193(v194, v195)
+
+            if v195 == nil then
+                break
+            end
+
+            v196:Stop()
+        end
+
+        local _Animation5 = Instance.new('Animation')
+
+        _Animation5.AnimationId = 'rbxassetid://81827172076105'
+
+        local v198 = _Humanoid7:LoadAnimation(_Animation5)
+        local v199 = v198:Play()
+
+        v198:AdjustSpeed(0)
+
+        v198.TimePosition = v199
+
+        v198:AdjustSpeed(1)
+
+        local _Players4 = game:GetService('Players')
+        local _ReplicatedStorage = game:GetService('ReplicatedStorage')
+        local _LocalPlayer13 = _Players4.LocalPlayer
+        local v203 = _LocalPlayer13.Character or _LocalPlayer13.CharacterAdded:Wait()
+
+        if v203 and v203:FindFirstChild('HumanoidRootPart') then
+            v203.Archivable = true
+
+            local u204 = v203:Clone()
+
+            v203.Archivable = false
+            u204.Parent = workspace
+
+            local _HumanoidRootPart3 = v203:FindFirstChild('HumanoidRootPart')
+            local _HumanoidRootPart4 = u204:FindFirstChild('HumanoidRootPart')
+
+            if _HumanoidRootPart3 and _HumanoidRootPart4 then
+                _HumanoidRootPart4.CFrame = _HumanoidRootPart3.CFrame * CFrame.new(0, 0, -3)
+            end
+
+            u204.Name = 'DummyClone'
+
+            local _Humanoid8 = u204:FindFirstChildOfClass('Humanoid')
+
+            if _Humanoid8 then
+                _Humanoid8.DisplayName = 'Dummy Clone'
+
+                _Humanoid8:SetAttribute('CloneFlag', true)
+            end
+
+            local v208 = _Humanoid8:FindFirstChildOfClass('Animator') or Instance.new('Animator', _Humanoid8)
+            local _Animation6 = Instance.new('Animation')
+
+            _Animation6.AnimationId = 'rbxassetid://116005409979614'
+
+            v208:LoadAnimation(_Animation6):Play()
+            task.delay(2.5, function()
+                if u204 and _HumanoidRootPart4 then
+                    local _Resources = _ReplicatedStorage:FindFirstChild('Resources')
+
+                    if _Resources then
+                        _Resources = _ReplicatedStorage.Resources.Slap.HMMM.msss:FindFirstChild('bsr')
+                    end
+                    if _Resources then
+                        local u211 = _Resources:Clone()
+
+                        u211.Parent = _HumanoidRootPart4
+
+                        local v212, v213, v214 = ipairs(u211:GetChildren())
+
+                        while true do
+                            local v215
+
+                            v214, v215 = v212(v213, v214)
+
+                            if v214 == nil then
+                                break
+                            end
+                            if v215:IsA('ParticleEmitter') then
+                                v215:Emit(15)
+
+                                v215.Enabled = true
+                            end
+                        end
+
+                        task.delay(1, function()
+                            if u211 then
+                                u211:Destroy()
+                            end
+                        end)
+                    end
+
+                    u204:Destroy()
+
+                    local v216 = 'https://github.com/LolnotaKid/Bbn/raw/refs/heads/main/lv_0_20250204223144.mp3'
+                    local v217 = 'lv_0_20250204223144.mp3'
+
+                    if not isfile(v217) then
+                        writefile(v217, game:HttpGet(v216))
+                    end
+
+                    local _Sound7 = Instance.new('Sound')
+
+                    _Sound7.SoundId = getcustomasset(v217)
+                    _Sound7.Volume = 4
+                    _Sound7.Looped = false
+                    _Sound7.Parent = _LocalPlayer13:FindFirstChild('PlayerGui') or _LocalPlayer13:WaitForChild('PlayerGui')
+
+                    _Sound7:Play()
+                end
+            end)
+        end
+    end
+end)
+
+local u219 = 12510170988
+local _LocalPlayer14 = game.Players.LocalPlayer;
+
+(_LocalPlayer14.Character or _LocalPlayer14.CharacterAdded:Wait()):WaitForChild('Humanoid').AnimationPlayed:Connect(function(p221)
+    if p221.Animation.AnimationId == 'rbxassetid://' .. u219 then
+        local _Humanoid9 = game.Players.LocalPlayer.Character:WaitForChild('Humanoid')
+        local v223, v224, v225 = pairs(_Humanoid9:GetPlayingAnimationTracks())
+
+        while true do
+            local v226
+
+            v225, v226 = v223(v224, v225)
+
+            if v225 == nil then
+                break
+            end
+
+            v226:Stop()
+        end
+
+        local _Animation7 = Instance.new('Animation')
+
+        _Animation7.AnimationId = 'rbxassetid://18897119503'
+
+        local v228 = _Humanoid9:LoadAnimation(_Animation7)
+        local v229 = v228:Play()
+
+        v228:AdjustSpeed(0)
+
+        v228.TimePosition = v229
+
+        v228:AdjustSpeed(1)
+    end
+end)
+
+local u230 = 11365563255
+local _LocalPlayer15 = game.Players.LocalPlayer;
+
+(_LocalPlayer15.Character or _LocalPlayer15.CharacterAdded:Wait()):WaitForChild('Humanoid').AnimationPlayed:Connect(function(p232)
+    if p232.Animation.AnimationId == 'rbxassetid://' .. u230 then
+        local _Humanoid10 = game.Players.LocalPlayer.Character:WaitForChild('Humanoid')
+        local v234, v235, v236 = pairs(_Humanoid10:GetPlayingAnimationTracks())
+
+        while true do
+            local v237
+
+            v236, v237 = v234(v235, v236)
+
+            if v236 == nil then
+                break
+            end
+
+            v237:Stop()
+        end
+
+        local _Animation8 = Instance.new('Animation')
+
+        _Animation8.AnimationId = 'rbxassetid://15121659862'
+
+        local v239 = _Humanoid10:LoadAnimation(_Animation8)
+
+        v239:Play()
+        v239:AdjustSpeed(0)
+
+        v239.TimePosition = 1
+
+        v239:AdjustSpeed(0.65)
+
+        local v240 = game:GetObjects('rbxassetid://' .. 4849188442)[1]
+        local _RightArm2 = (game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()):FindFirstChild('Right Arm')
+
+        if v240 then
+            local _Character3 = game.Players.LocalPlayer.Character
+            local v243 = _Character3 and _Character3:WaitForChild('HumanoidRootPart')
+
+            if v243 then
+                v240.Parent = game.Workspace
+
+                local v244 = v243.CFrame * CFrame.new(0, 0, 0)
+                local v245, v246, v247 = pairs(v240:GetDescendants())
+
+                while true do
+                    local v248
+
+                    v247, v248 = v245(v246, v247)
+
+                    if v247 == nil then
+                        break
+                    end
+                    if v248:IsA('BasePart') then
+                        v248.CanCollide = false
+                        v248.Anchored = false
+
+                        local _Weld2 = Instance.new('Weld')
+
+                        _Weld2.Part0 = v248
+                        _Weld2.Part1 = _RightArm2
+                        _Weld2.C0 = CFrame.new(0, 1.5, 0) * CFrame.Angles(math.rad(0), 0, 0)
+                        _Weld2.Parent = v248
+                        v248.CFrame = v244
+                    end
+                end
+
+                wait(5)
+
+                game.Players.LocalPlayer.PlayerGui:FindFirstChild('Hotbar'):FindFirstChild('Backpack'):FindFirstChild('Hotbar'):FindFirstChild('1').Base.ToolName.Text = 'Rasengan'
+                game.Players.LocalPlayer.PlayerGui:FindFirstChild('Hotbar'):FindFirstChild('Backpack'):FindFirstChild('Hotbar'):FindFirstChild('2').Base.ToolName.Text = 'Uzumaki Combo'
+                game.Players.LocalPlayer.PlayerGui:FindFirstChild('Hotbar'):FindFirstChild('Backpack'):FindFirstChild('Hotbar'):FindFirstChild('3').Base.ToolName.Text = 'Teleportation Jutsu'
+                game.Players.LocalPlayer.PlayerGui:FindFirstChild('Hotbar'):FindFirstChild('Backpack'):FindFirstChild('Hotbar'):FindFirstChild('4').Base.ToolName.Text = 'Shadow Clone Throw'
+
+                local _PlayerGui2 = game:GetService('Players').LocalPlayer:WaitForChild('PlayerGui')
+
+                local function v255()
+                    local _ScreenGui2 = _PlayerGui2:FindFirstChild('ScreenGui')
+
+                    if _ScreenGui2 then
+                        local _MagicHealth2 = _ScreenGui2:FindFirstChild('MagicHealth')
+                        local v253 = _MagicHealth2 and _MagicHealth2:FindFirstChild('TextLabel')
+
+                        if v253 then
+                            v253.Text = 'UNLEASH THE BEAST'
+
+                            local _Bar2 = _MagicHealth2:FindFirstChild('Health').Bar.Bar
+
+                            if _Bar2 then
+                                _Bar2.ImageColor3 = Color3.fromRGB(255, 150, 0)
+                            end
+
+                            return
+                        end
+                    end
+                end
+
+                _PlayerGui2.DescendantAdded:Connect(v255)
+                v255()
+
+                local _LocalPlayer16 = game.Players.LocalPlayer
+
+                _LocalPlayer16.PlayerGui.Hotbar.Backpack.Hotbar:WaitForChild('1').Base.Reuse.Visible = true
+                _LocalPlayer16.PlayerGui.Hotbar.Backpack.Hotbar:WaitForChild('1').Base.Reuse.Text = 'VARIANT AIR'
+                _LocalPlayer16.PlayerGui.Hotbar.Backpack.Hotbar:WaitForChild('1').Base.Reuse.Reuse.Text = 'VARIANT AIR'
+                _LocalPlayer16.PlayerGui.Hotbar.Backpack.Hotbar:WaitForChild('2').Base.Reuse.Visible = true
+                _LocalPlayer16.PlayerGui.Hotbar.Backpack.Hotbar:WaitForChild('2').Base.Reuse.Text = 'VARIANT AIR'
+                _LocalPlayer16.PlayerGui.Hotbar.Backpack.Hotbar:WaitForChild('2').Base.Reuse.Reuse.Text = 'VARIANT AIR'
+
+                local v257 = game.ReplicatedStorage.Resources.UFW.vfx.splode.splode.PointAtt:Clone()
+
+                v257.Parent = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart')
+
+                local v258, v259, v260 = ipairs(v257:GetChildren())
+
+                while true do
+                    local v261
+
+                    v260, v261 = v258(v259, v260)
+
+                    if v260 == nil then
+                        break
+                    end
+                    if v261:IsA('ParticleEmitter') then
+                        v261:Emit(15)
+
+                        v261.Enabled = true
+                    end
+                end
+
+                wait(2)
+                v257:Destroy()
+                v240:Destroy()
+            end
+        end
+    end
+end)
+
+local u262 = 15955393872
+local _LocalPlayer17 = game.Players.LocalPlayer;
+
+(_LocalPlayer17.Character or _LocalPlayer17.CharacterAdded:Wait()):WaitForChild('Humanoid').AnimationPlayed:Connect(function(p264)
+    if p264.Animation.AnimationId == 'rbxassetid://' .. u262 then
+        local _Humanoid11 = game.Players.LocalPlayer.Character:WaitForChild('Humanoid')
+        local v266, v267, v268 = pairs(_Humanoid11:GetPlayingAnimationTracks())
+
+        while true do
+            local v269
+
+            v268, v269 = v266(v267, v268)
+
+            if v268 == nil then
+                break
+            end
+
+            v269:Stop()
+        end
+
+        local _Animation9 = Instance.new('Animation')
+
+        _Animation9.AnimationId = 'rbxassetid://10503381238'
+
+        local v271 = _Humanoid11:LoadAnimation(_Animation9)
+
+        v271:Play()
+        v271:AdjustSpeed(0)
+
+        v271.TimePosition = 0
+
+        v271:AdjustSpeed(1)
+
+        local _LocalPlayer18 = game:GetService('Players').LocalPlayer
+
+        if not _LocalPlayer18:WaitForChild('PlayerGui'):FindFirstChild('p') then
+            if not isfile('p.mp4') then
+                writefile('p.mp4', game:HttpGet('https://github.com/LolnotaKid/Wallcombo/raw/refs/heads/main/Naruto%20Meets%20Kyuubi%20First%20Time%20(online-video-cutter.com).mp4'))
+            end
+
+            local _ScreenGui3 = Instance.new('ScreenGui')
+
+            _ScreenGui3.Name = 'p'
+            _ScreenGui3.ResetOnSpawn = false
+            _ScreenGui3.IgnoreGuiInset = true
+            _ScreenGui3.Parent = _LocalPlayer18:WaitForChild('PlayerGui')
+
+            local _VideoFrame = Instance.new('VideoFrame', _ScreenGui3)
+
+            _VideoFrame.Name = 'p'
+            _VideoFrame.Size = UDim2.new(1, 0, 1, 0)
+            _VideoFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+            _VideoFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+            _VideoFrame.Video = getcustomasset('p.mp4')
+            _VideoFrame.Volume = 1
+            _VideoFrame.Looped = false
+            _VideoFrame.Visible = false
+        end
+
+        local _p = game:GetService('Players').LocalPlayer:WaitForChild('PlayerGui'):WaitForChild('p')
+        local _p2 = _p:FindFirstChild('p')
+
+        _p.DisplayOrder = 12
+
+        (function(p277, p278, p279)
+            if _p2 then
+                _p2.TimePosition = p277 or 0
+                _p2.Volume = p278 or 1
+                _p2.Visible = true
+
+                _p2:Play()
+                task.delay(p279, function()
+                    _p2:Pause()
+
+                    _p2.Visible = false
+                end)
+            else
+                warn('video ain here bruh')
+            end
+        end)(0, 1, 5)
+
+        local u280 = game.ReplicatedStorage.Resources.LastBreath.Assets.Beam.MainBeam.Main.Fire:Clone()
+
+        u280.Parent = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart')
+
+        local v281, v282, v283 = ipairs(u280:GetChildren())
+
+        while true do
+            local v284
+
+            v283, v284 = v281(v282, v283)
+
+            if v283 == nil then
+                break
+            end
+            if v284:IsA('ParticleEmitter') then
+                v284:Emit(15)
+
+                v284.Enabled = true
+            end
+        end
+
+        task.delay(2, function()
+            u280:Destroy()
+        end)
+    end
+end)
+
+local u285 = 12447707844
+local _LocalPlayer19 = game.Players.LocalPlayer
+local _Humanoid12 = (_LocalPlayer19.Character or _LocalPlayer19.CharacterAdded:Wait()):WaitForChild('Humanoid')
+
+_Humanoid12.AnimationPlayed:Connect(function(p288)
+    if p288.Animation.AnimationId == 'rbxassetid://' .. u285 then
+        local _Humanoid13 = game.Players.LocalPlayer.Character:WaitForChild('Humanoid')
+        local v290, v291, v292 = pairs(_Humanoid13:GetPlayingAnimationTracks())
+
+        while true do
+            local v293
+
+            v292, v293 = v290(v291, v292)
+
+            if v292 == nil then
+                break
+            end
+
+            v293:Stop()
+        end
+
+        local _Animation10 = Instance.new('Animation')
+
+        _Animation10.AnimationId = 'rbxassetid://95000469063288'
+
+        local u295 = _Humanoid13:LoadAnimation(_Animation10)
+        local v296 = u295
+
+        u295.Play(v296)
+
+        local v297 = u295
+
+        u295.AdjustSpeed(v297, 0)
+
+        u295.TimePosition = 8
+
+        local v298 = u295
+
+        u295.AdjustSpeed(v298, 0.8)
+        delay(3.7, function()
+            u295:Stop()
+        end)
+        wait(0)
+
+        local v299 = 'https://github.com/LolnotaKid/B/raw/refs/heads/main/Naruto_Kyuubi_Scream(144p)%20(online-video-cutter.com).mp3'
+        local v300 = 'Naruto_Kyuubi_Scream(144p)%20(online-video-cutter.com).mp3'
+
+        if not isfile(v300) then
+            writefile(v300, game:HttpGet(v299))
+        end
+
+        local _Sound8 = Instance.new('Sound')
+
+        _Sound8.SoundId = getcustomasset(v300)
+        _Sound8.Volume = 4
+        _Sound8.Looped = false
+        _Sound8.Parent = game.Players.LocalPlayer:WaitForChild('PlayerGui')
+
+        _Sound8:Play()
+
+        local v302 = game.StarterPlayer.StarterCharacter.Torso.GreenAura:Clone()
+
+        v302.Parent = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart')
+
+        local v303, v304, v305 = ipairs(v302:GetChildren())
+
+        while true do
+            local v306
+
+            v305, v306 = v303(v304, v305)
+
+            if v305 == nil then
+                break
+            end
+            if v306:IsA('ParticleEmitter') then
+                v306.Color = ColorSequence.new(Color3.new(0.7, 0, 0))
+
+                v306:Emit(15)
+
+                v306.Enabled = true
+            end
+        end
+
+        wait(3.7)
+        v302:Destroy()
+        wait(0)
+
+        local _Animation11 = Instance.new('Animation')
+
+        _Animation11.AnimationId = 'rbxassetid://15391323441'
+
+        local v308 = _Humanoid13:LoadAnimation(_Animation11)
+
+        v308:Play()
+        v308:AdjustSpeed(0)
+
+        v308.TimePosition = 4.5
+
+        v308:AdjustSpeed(1)
+
+        local _LocalPlayer20 = game.Players.LocalPlayer
+
+        if not _LocalPlayer20:WaitForChild('PlayerGui'):FindFirstChild('b') then
+            if not isfile('b.mp4') then
+                writefile('b.mp4', game:HttpGet('https://github.com/LolnotaKid/Nauroo/raw/refs/heads/main/Naruto%20uses%20the%20Nine%20tails%20chakra%20for%20the%20first%20time%20(online-video-cutter.com)%20(1).mp4'))
+            end
+
+            local _ScreenGui4 = Instance.new('ScreenGui')
+
+            _ScreenGui4.Name = 'b'
+            _ScreenGui4.ResetOnSpawn = false
+            _ScreenGui4.IgnoreGuiInset = true
+            _ScreenGui4.Parent = _LocalPlayer20:WaitForChild('PlayerGui')
+
+            local _VideoFrame2 = Instance.new('VideoFrame', _ScreenGui4)
+
+            _VideoFrame2.Name = 'b'
+            _VideoFrame2.Size = UDim2.new(1, 0, 1, 0)
+            _VideoFrame2.AnchorPoint = Vector2.new(0.5, 0.5)
+            _VideoFrame2.Position = UDim2.new(0.5, 0, 0.5, 0)
+            _VideoFrame2.Video = getcustomasset('b.mp4')
+            _VideoFrame2.Volume = 1
+            _VideoFrame2.Looped = false
+            _VideoFrame2.Visible = false
+        end
+
+        local _b = game:GetService('Players').LocalPlayer:WaitForChild('PlayerGui'):WaitForChild('b')
+        local _b2 = _b:FindFirstChild('b')
+
+        _b.DisplayOrder = 12
+
+        (function(p314, p315, p316)
+            if _b2 then
+                _b2.TimePosition = p314 or 0
+                _b2.Volume = p315 or 1
+                _b2.Visible = true
+
+                _b2:Play()
+                task.delay(p316, function()
+                    _b2:Pause()
+
+                    _b2.Visible = false
+                end)
+            else
+                warn('video ain here bruh')
+            end
+        end)(0, 1, 5)
+
+        game.Players.LocalPlayer.PlayerGui:FindFirstChild('Hotbar'):FindFirstChild('Backpack'):FindFirstChild('Hotbar'):FindFirstChild('1').Base.ToolName.Text = '(Naruto Mad)'
+        game.Players.LocalPlayer.PlayerGui:FindFirstChild('Hotbar'):FindFirstChild('Backpack'):FindFirstChild('Hotbar'):FindFirstChild('2').Base.ToolName.Text = 'Rasen Shuriken'
+        game.Players.LocalPlayer.PlayerGui:FindFirstChild('Hotbar'):FindFirstChild('Backpack'):FindFirstChild('Hotbar'):FindFirstChild('3').Base.ToolName.Text = "idk (Naruto's villain Arc)"
+        game.Players.LocalPlayer.PlayerGui:FindFirstChild('Hotbar'):FindFirstChild('Backpack'):FindFirstChild('Hotbar'):FindFirstChild('4').Base.ToolName.Text = "idk (Naruto's unexist Move..)"
+
+        wait(1.5)
+
+        local v317 = game.ReplicatedStorage.Resources.LastBreath.Resources.Exp.Charge.Attachment:Clone()
+
+        v317.Parent = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart')
+
+        local v318, v319, v320 = ipairs(v317:GetChildren())
+
+        while true do
+            local v321
+
+            v320, v321 = v318(v319, v320)
+
+            if v320 == nil then
+                break
+            end
+            if v321:IsA('ParticleEmitter') then
+                v321:Emit(15)
+
+                v321.Enabled = true
+            end
+        end
+
+        wait(5)
+        v317:Destroy()
+
+        local v322 = game.ReplicatedStorage.Resources.GrandFissureFinisher.DragonExplode.Part.Main:Clone()
+
+        v322.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+        local v323, v324, v325 = ipairs(v322:GetChildren())
+
+        while true do
+            local v326
+
+            v325, v326 = v323(v324, v325)
+
+            if v325 == nil then
+                break
+            end
+            if v326:IsA('ParticleEmitter') then
+                v326.Color = ColorSequence.new(Color3.fromRGB(207, 96, 36))
+
+                v326:Emit(15)
+
+                v326.Enabled = true
+            end
+        end
+
+        wait(3)
+        v322:Destroy()
+    end
+end)
+
+local u327 = {
+    [17859015788] = true,
+    [10469493270] = true,
+    [10469630950] = true,
+    [10469639222] = true,
+    [10469643643] = true,
+}
+local u328 = {
+    ['10469493270'] = 'rbxassetid://17889458563',
+    ['10469630950'] = 'rbxassetid://13532600125',
+    ['10469639222'] = 'rbxassetid://13532604085',
+    ['10469643643'] = 'rbxassetid://17889290569',
+    ['17859015788'] = 'rbxassetid://13532604085',
+    ['11365563255'] = 'rbxassetid://13501296372',
+}
+local u329 = {}
+local u330 = false
+
+local function u335(p331)
+    if u330 then
+        table.insert(u329, p331)
+    else
+        u330 = true
+
+        local v332 = u328[tostring(p331)]
+
+        if v332 then
+            local _Animation12 = Instance.new('Animation')
+
+            _Animation12.AnimationId = v332
+
+            local v334 = _Humanoid12:LoadAnimation(_Animation12)
+
+            v334:Play()
+            v334.Stopped:Connect(function()
+                u330 = false
+
+                if #u329 > 0 then
+                    u335((table.remove(u329, 1)))
+                end
+            end)
+        else
+            u330 = false
+        end
+    end
+end
+local function u341()
+    local v336 = _Humanoid12
+    local v337, v338, v339 = ipairs(v336:GetPlayingAnimationTracks())
+
+    while true do
+        local v340
+
+        v339, v340 = v337(v338, v339)
+
+        if v339 == nil then
+            break
+        end
+        if u327[tonumber(v340.Animation.AnimationId:match('%d+'))] then
+            v340:Stop()
+        end
+    end
+end
+local function v344(p342)
+    local v343 = tonumber(p342.Animation.AnimationId:match('%d+'))
+
+    if u327[v343] then
+        u341()
+        p342:Stop()
+
+        if u328[tostring(v343)] then
+            u335(v343)
+        end
+    end
+end
+
+_Humanoid12.AnimationPlayed:Connect(v344)
+
+local _LocalPlayer21 = game.Players.LocalPlayer
+local u346 = _LocalPlayer21.Character or _LocalPlayer21.CharacterAdded:Wait()
+local _HumanoidRootPart5 = u346:WaitForChild('HumanoidRootPart')
+
+local function u349(p348)
+    if p348:IsA('BodyVelocity') then
+        p348.Velocity = Vector3.new(p348.Velocity.X, 0, p348.Velocity.Z)
+    end
+end
+
+u346.DescendantAdded:Connect(u349)
+
+local v350, v351, v352 = pairs(u346:GetDescendants())
+
+while true do
+    local v353
+
+    v352, v353 = v350(v351, v352)
+
+    if v352 == nil then
+        break
+    end
+
+    u349(v353)
+end
+
+_LocalPlayer21.CharacterAdded:Connect(function(p354)
+    u346 = p354
+    _HumanoidRootPart5 = u346:WaitForChild('HumanoidRootPart')
+
+    u346.DescendantAdded:Connect(u349)
+
+    local v355 = u346
+    local v356, v357, v358 = pairs(v355:GetDescendants())
+
+    while true do
+        local v359
+
+        v358, v359 = v356(v357, v358)
+
+        if v358 == nil then
+            break
+        end
+
+        u349(v359)
+    end
+end)
+
+local _PlayerGui3 = game.Players.LocalPlayer:WaitForChild('PlayerGui')
+local _ScreenGui5 = Instance.new('ScreenGui')
+
+_ScreenGui5.Name = 'gui for watermark'
+_ScreenGui5.Parent = _PlayerGui3
+
+local _TextLabel6 = Instance.new('TextLabel')
+
+_TextLabel6.Text = 'credits to Veux and corchious on discord'
+_TextLabel6.Size = UDim2.new(0.3, 0, 0.05, 0)
+_TextLabel6.Position = UDim2.new(0, 0, 0, 0)
+_TextLabel6.BackgroundTransparency = 1
+_TextLabel6.TextTransparency = 0.5
+_TextLabel6.TextScaled = true
+_TextLabel6.Parent = _ScreenGui5
+
+local _Tool = Instance.new('Tool')
+
+_Tool.Name = 'Sprint'
+_Tool.Parent = game.Players.LocalPlayer.Backpack
+_Tool.RequiresHandle = false
+
+local u364 = false
+local _LocalPlayer22 = game.Players.LocalPlayer
+local v366 = _LocalPlayer22.Character or _LocalPlayer22.CharacterAdded:Wait()
+local _HumanoidRootPart6 = v366:WaitForChild('HumanoidRootPart')
+local _Humanoid14 = v366:WaitForChild('Humanoid')
+local _RunService = game:GetService('RunService')
+local u370 = 125
+local _Animation13 = Instance.new('Animation')
+
+_Animation13.AnimationId = 'rbxassetid://18897115785'
+
+local u372 = _Humanoid14:FindFirstChildOfClass('Animator') or _Humanoid14:WaitForChild('Animator')
+local u373 = nil
+
+local function u374()
+    while u364 do
+        _HumanoidRootPart6.Velocity = _HumanoidRootPart6.CFrame.LookVector * u370
+
+        _RunService.Stepped:Wait()
+    end
+end
+
+_Tool.Equipped:Connect(function()
+    u364 = true
+    u373 = u372:LoadAnimation(_Animation13)
+
+    u373:Play()
+    u374()
+end)
+_Tool.Unequipped:Connect(function()
+    u364 = false
+
+    if u373 then
+        u373:Stop()
+    end
+end)
+
+local _Players5 = game:GetService('Players')
+
+game:GetService('RunService')
+
+local _LocalPlayer23 = _Players5.LocalPlayer
+local _CurrentCamera2 = workspace.CurrentCamera
+local u378 = 'rbxassetid://10471336737'
+local u379 = 4
+local u380 = 60
+
+local function u385(p381)
+    local _, v382 = _CurrentCamera2:WorldToViewportPoint(p381.Position)
+
+    if not v382 then
+        return false
+    end
+
+    local v383 = Ray.new(_CurrentCamera2.CFrame.Position, (p381.Position - _CurrentCamera2.CFrame.Position).unit * _CurrentCamera2.ViewportSize.Magnitude)
+    local v384 = workspace:FindPartOnRayWithIgnoreList(v383, {
+        _LocalPlayer23.Character,
+    })
+
+    if v384 then
+        v384 = v384:IsDescendantOf(p381.Parent)
+    end
+
+    return v384
+end
+local function u396()
+    local v386 = nil
+    local v387 = u380
+    local _Character4 = _LocalPlayer23.Character
+
+    if not _Character4 then
+        return nil
+    end
+
+    local _HumanoidRootPart7 = _Character4:FindFirstChild('HumanoidRootPart')
+
+    if not _HumanoidRootPart7 then
+        return nil
+    end
+
+    local v390, v391, v392 = ipairs(workspace:GetDescendants())
+
+    while true do
+        local v393
+
+        v392, v393 = v390(v391, v392)
+
+        if v392 == nil then
+            break
+        end
+        if v393:IsA('Humanoid') and v393.Parent ~= _Character4 and not (v393.Parent:FindFirstChildOfClass('Humanoid') and v393.Parent.Humanoid:GetAttribute('CloneFlag')) then
+            local _HumanoidRootPart8 = v393.Parent:FindFirstChild('HumanoidRootPart')
+
+            if _HumanoidRootPart8 and u385(_HumanoidRootPart8) then
+                local _Magnitude2 = (_HumanoidRootPart7.Position - _HumanoidRootPart8.Position).Magnitude
+
+                if _Magnitude2 < v387 then
+                    v386 = v393
+                    v387 = _Magnitude2
+                end
+            end
+        end
+    end
+
+    return v386, v387
+end
+local function u402(p397)
+    local _Character5 = _LocalPlayer23.Character
+
+    if _Character5 then
+        local _HumanoidRootPart9 = _Character5:FindFirstChild('HumanoidRootPart')
+        local _HumanoidRootPart10 = p397.Parent:FindFirstChild('HumanoidRootPart')
+
+        if _HumanoidRootPart9 and _HumanoidRootPart10 then
+            local v401 = _HumanoidRootPart10.CFrame + _HumanoidRootPart10.CFrame.LookVector * u379
+
+            _HumanoidRootPart9.CFrame = CFrame.new(v401.Position, _HumanoidRootPart10.Position)
+        end
+    end
+end
+local function v406(p403)
+    local __3ssd = p403:match('^/3%s*=%s*(%d+)$')
+    local v405 = __3ssd and tonumber(__3ssd)
+
+    if v405 then
+        u380 = math.clamp(v405, 5, 200)
+
+        game.StarterGui:SetCore('ChatMakeSystemMessage', {
+            Text = 'Move 3 Teleport distance set to ' .. u380 .. ' studs.',
+            Color = Color3.fromRGB(0, 255, 0),
+        })
+    end
+end
+
+_LocalPlayer23.Chatted:Connect(v406)
+
+local function v411(p407)
+    p407:WaitForChild('Humanoid'):WaitForChild('Animator').AnimationPlayed:Connect(function(p408)
+        if p408.Animation.AnimationId == u378 then
+            task.wait(1.3)
+
+            local v409, v410 = u396()
+
+            if v409 and v410 <= u380 then
+                u402(v409)
+            end
+        end
+    end)
+end
+
+if _LocalPlayer23.Character then
+    v411(_LocalPlayer23.Character)
+end
+
+local _Players6 = game:GetService('Players')
+local _RunService2 = game:GetService('RunService')
+local _LocalPlayer24 = _Players6.LocalPlayer
+local u415 = _LocalPlayer24.Character or _LocalPlayer24.CharacterAdded:Wait()
+local _Humanoid15 = u415:WaitForChild('Humanoid')
+local _HumanoidRootPart11 = u415:WaitForChild('HumanoidRootPart')
+local v418 = _Humanoid15:FindFirstChildOfClass('Animator') or _Humanoid15:WaitForChild('Animator')
+local u419 = 'rbxassetid://18896229321'
+local u420 = false
+local u421 = 50
+
+local function v425(p422)
+    local __2ssd = p422:match('^/2%s*=%s*(%d+)$')
+    local v424 = __2ssd and tonumber(__2ssd)
+
+    if v424 then
+        u421 = math.clamp(v424, 1, 200)
+
+        game.StarterGui:SetCore('ChatMakeSystemMessage', {
+            Text = 'Teleport distance set to ' .. u421 .. ' studs.',
+            Color = Color3.fromRGB(0, 255, 0),
+        })
+    end
+end
+
+_LocalPlayer24.Chatted:Connect(v425)
+_Humanoid15.StateChanged:Connect(function(_, p426)
+    if p426 == Enum.HumanoidStateType.Freefall then
+        u420 = true
+
+        task.wait(0.4)
+
+        u420 = false
+    end
+end)
+v418.AnimationPlayed:Connect(function(p427)
+    if p427.Animation and (p427.Animation.AnimationId == u419 and u420) then
+        local v428 = GetClosestVisibleTarget()
+
+        if v428 and (v428.HumanoidRootPart.Position - _HumanoidRootPart11.Position).Magnitude <= u421 then
+            AttachToHead(v428)
+        end
+    end
+end)
+
+function GetClosestVisibleTarget()
+    local _CurrentCamera3 = workspace.CurrentCamera
+    local _huge2 = math.huge
+    local v431, v432, v433 = pairs(workspace:GetDescendants())
+    local v434 = nil
+
+    while true do
+        local v435
+
+        v433, v435 = v431(v432, v433)
+
+        if v433 == nil then
+            break
+        end
+        if v435:IsA('Model') and v435 ~= u415 then
+            local _Humanoid16 = v435:FindFirstChildOfClass('Humanoid')
+            local _Head2 = v435:FindFirstChild('Head')
+
+            if _Humanoid16 and _Head2 then
+                local _, v438 = _CurrentCamera3:WorldToScreenPoint(_Head2.Position)
+
+                if v438 then
+                    local _Magnitude3 = (_CurrentCamera3.CFrame.Position - _Head2.Position).Magnitude
+
+                    if _Magnitude3 < _huge2 then
+                        v434 = v435
+                        _huge2 = _Magnitude3
+                    end
+                end
+            end
+        end
+    end
+
+    return v434
+end
+function AttachToHead(p440)
+    local _Head3 = p440:FindFirstChild('Head')
+
+    if _Head3 and _HumanoidRootPart11 then
+        _HumanoidRootPart11.CFrame = _Head3.CFrame * CFrame.new(0, 1.5, 0)
+
+        local u442 = game.ReplicatedStorage.Resources.Fissure.Pls.GoodSmoke3.Hit.Attachment:Clone()
+
+        u442.Parent = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart')
+
+        local v443, v444, v445 = ipairs(u442:GetChildren())
+
+        while true do
+            local v446
+
+            v445, v446 = v443(v444, v445)
+
+            if v445 == nil then
+                break
+            end
+            if v446:IsA('ParticleEmitter') then
+                v446.Color = ColorSequence.new(Color3.fromRGB(207, 96, 36))
+
+                v446:Emit(15)
+
+                v446.Enabled = true
+            end
+        end
+
+        task.delay(1, function()
+            if u442 then
+                u442:Destroy()
+            end
+        end)
+
+        _HumanoidRootPart11.CFrame = _HumanoidRootPart11.CFrame * CFrame.Angles(math.rad(90), 0, 0)
+
+        local u447 = tick() + 1.3
+        local u448 = nil
+
+        u448 = _RunService2.Heartbeat:Connect(function()
+            if u447 >= tick() then
+                _HumanoidRootPart11.CFrame = _Head3.CFrame * CFrame.new(0, 1.5, 0)
+                _HumanoidRootPart11.CFrame = _HumanoidRootPart11.CFrame * CFrame.Angles(math.rad(-90), 0, 0)
+            else
+                u448:Disconnect()
+            end
+        end)
+    end
+end
+
+local function v451(p449, p450)
+    game:GetService('StarterGui'):SetCore('SendNotification', {
+        Title = p449,
+        Text = p450,
+        Icon = 'rbxassetid://rbxthumb://type=Asset&id=108631608032443&w=420&h=420',
+        Duration = 10,
+    })
+end
+
+v451('LITTLE IMPORTANT', 'TYPE "/infor" IN CHAT!')
+v451('Information', 'Made By @RedVeux And @corchious')
+wait(3)
+
+local _Players7 = game:GetService('Players')
+local _RunService3 = game:GetService('RunService')
+local _LocalPlayer25 = _Players7.LocalPlayer
+local u455 = _LocalPlayer25.Character or _LocalPlayer25.CharacterAdded:Wait()
+local v456 = u455
+local u457 = u455.FindFirstChildOfClass(v456, 'Humanoid')
+local _CurrentCamera4 = game.Workspace.CurrentCamera
+
+local function v463(p459)
+    local v460 = u457:FindFirstChildOfClass('Animator') or u457:WaitForChild('Animator')
+    local _Animation14 = Instance.new('Animation')
+
+    _Animation14.AnimationId = 'rbxassetid://' .. p459
+
+    local v462 = v460:LoadAnimation(_Animation14)
+
+    v462:Play()
+
+    return v462
+end
+local function v470(p464, p465)
+    local _Position = _CurrentCamera4.CFrame.Position
+    local u467 = tick()
+
+    _RunService3:BindToRenderStep('CameraMove', Enum.RenderPriority.Camera.Value, function()
+        local v468 = math.min((tick() - u467) / p465, 1)
+        local v469 = _Position
+
+        _CurrentCamera4.CFrame = CFrame.new(v469:Lerp(p464, v468), u455.Head.Position)
+
+        if v468 == 1 then
+            _RunService3:UnbindFromRenderStep('CameraMove')
+        end
+    end)
+    task.wait(p465)
+end
+
+local _Position2 = u455.Head.Position
+
+v463(15310973900)
+v470(_Position2 + Vector3.new(-2, -3, 0), 2)
+task.wait(1)
+
+local v472 = 'https://github.com/LolnotaKid/Naruto/raw/refs/heads/main/Naruto_saying_BAKA___Naruto__(144p).mp3'
+local v473 = 'Naruto_saying_BAKA___Naruto__(144p).mp3'
+
+if not isfile(v473) then
+    writefile(v473, game:HttpGet(v472))
+end
+
+local _Sound9 = Instance.new('Sound')
+
+_Sound9.SoundId = getcustomasset(v473)
+_Sound9.Volume = 4
+_Sound9.Looped = false
+_Sound9.Parent = _LocalPlayer25:WaitForChild('PlayerGui')
+
+_Sound9:Play()
+
+local v475 = v463(13073745835)
+
+v470(_Position2 + Vector3.new(-2, 1, 0), 1.5)
+v475.Stopped:Wait()
